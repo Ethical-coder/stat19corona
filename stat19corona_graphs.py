@@ -6,9 +6,17 @@ from pygal.style import NeonStyle
 import pygal
 
 #importing url
-url='https://docs.google.com/spreadsheets/d/e/2PACX-1vSz8Qs1gE_IYpzlkFkCXGcL_BqR8hZieWVi-rphN1gfrO3H4lDtVZs4kd0C3P8Y9lhsT1rhoB-Q_cP4/pubhtml'
+url='http://patientdb.covid19india.org/'
 c=pd.read_html(url,header=0)
-states=c[3].columns[4:]
+
+index=1
+for i in range(1,len(c)):
+    if 'TT' in c[i].columns and 'MP' in c[i].columns and 'UP' in c[i].columns:
+        index=i
+        break
+
+states=c[index].columns[4:]
+
 
 
 
