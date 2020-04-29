@@ -1,5 +1,16 @@
 {% extends "layout.html" %}
-{% block body %}
-    <h1>This is the graph</h1>
-    <!-- <embed type='image/svg+xml' src={{ response|safe }} style="max-width: 1000px;"/> -->
+{% block stateplots %}
+    <!-- <h1>This is the graph</h1>
+    <embed type='image/svg+xml' src={{ response|safe }} style="max-width: 1000px;"/>  -->
+    <div class="plots row">
+      <div class="col-lg-6">
+        <embed type="img/svg+xml" src="{{ response[0]|safe }}">
+        <p style="margin-top: 10px; text-align: center;"></p>
+      </div>
+      <div class="col-lg-6">
+        <embed type="img/svg+xml" src="{{ response[1]|safe }}">
+        <p style="margin-top: 10px; text-align: center;"></p>
+      </div>
+    </div>
+
 {% endblock %}

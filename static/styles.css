@@ -1,0 +1,52 @@
+
+p{
+  color: #e3e3e3;
+}
+
+body{
+  background-color: #203541;
+  color: #e3e3e3;
+  font-family: 'Raleway';
+}
+
+/* *******************NAVIGATOION BAR****************** */
+.navbar{
+  background-color: #374955;
+  font-size: 1rem;
+  font-family: 'Raleway';
+}
+
+.navbar-toggler-icon{
+  padding-top: 15%;
+}
+
+.nav-link{
+  color: #e3e3e3;
+  margin: 5px 10px;
+  padding: 1px 2px;
+}
+.nav-link:hover{
+  color: #f95959;
+}
+
+.navbar-brand{
+  font-size: 2rem;
+  padding-left: 15px;
+  color: #f95959;
+  font-family: 'Risque';
+  margin-bottom: 0;
+}
+
+/* **********************Content****************** */
+
+.intro{
+  padding-left: 5%;
+  padding-right: 5%;
+  letter-spacing: 1.5;
+}
+.intro h3{
+  text-align: center;
+  font-family: 'Oswald';
+  font-size: 1.75rem;
+  color: #f95959;
+}
