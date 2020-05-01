@@ -47,7 +47,7 @@
 
     <!-- The World Map Goes Here! -->
 
-      <p class="col-lg-12" style="margin: 100px 0; text-align: center; padding:100px auto; font-size: 2.5rem;">World Map</p>
+    {% block worldmap %} {% endblock %}
 
 
   <!-- The Introduction -->
@@ -59,10 +59,8 @@
   </div>
 
   <!-- Indian Plot and Donut -->
-  <div class="row">
-    <p class="col-lg-6" style="margin-top: 100px; text-align: center; padding:100px auto; font-size: 2.5rem;">India Cases</p>
-    <p class="col-lg-6" style="margin-top: 100px; text-align: center; padding:100px auto; font-size: 2.5rem;">India Pie Chart</p>
-  </div>
+  
+  {% block countryplots %} {% endblock %}
 
   {%block stateplots %} {% endblock %}
 

@@ -1,21 +1,38 @@
 {% extends "layout.html" %}
+
+{% block worldmap %}
+      <div class="worldmap container" >
+        <embed type="image/svg+xml" src= {{ response[0]|safe }} />
+        <p style="margin-top: 10px; text-align: center;">State Plot</p>
+      </div>
+
+{% endblock %}
+
+{% block countryplots %}
+
+    <div class="plots row">
+      <div class="col-lg-6">
+        <embed type="image/svg+xml" src= {{ response[1]|safe }} />
+        <p style="margin-top: 10px; text-align: center;">State Plot</p>
+      </div>
+      <div class="col-lg-6">
+        <embed type="image/svg+xml" src= {{ response[2]|safe }} />
+        <p style="margin-top: 10px; text-align: center;">State Plot</p>
+      </div>
+    </div>
+
+{% endblock %}
+
+
 {% block stateplots %}
 
     <div class="plots row">
       <div class="col-lg-6">
-        <iframe id="inlineFrameExample"
-          title="Inline Frame Example"
-          style = "width: 500px; height: 500px;"
-          src={{ response[0]|safe }}>
-        </iframe>
+        <embed type="image/svg+xml" src= {{ response[3]|safe }} />
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
       <div class="col-lg-6">
-        <iframe id="inlineFrameExample"
-          title="Inline Frame Example"
-          style = "width: 500px; height: 500px;"
-          src={{ response[1]|safe }}>
-        </iframe>
+        <embed type="image/svg+xml" src= {{ response[4]|safe }} />
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
     </div>

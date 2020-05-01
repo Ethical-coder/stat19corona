@@ -37,6 +37,11 @@ body{
   margin-bottom: 0;
 }
 
+.worldmap{
+  padding: 5% 20%;
+  margin-top: 100px;
+}
+
 /* **********************Content****************** */
 
 .intro{

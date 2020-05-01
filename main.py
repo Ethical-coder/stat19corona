@@ -11,9 +11,12 @@ def home():
 
 @app.route('/graph')
 def plot():
-    response = [None, None]
-    response[0] = pickle.load( open('./plots/MP_Corona_Cases.sav', 'rb') )
-    response[1] = pickle.load( open('./plots/MP_Districts_pie_chart.sav', 'rb') )
+    response = [None, None, None, None, None]
+    response[0] = pickle.load( open('./plots/worldmap.sav', 'rb') )
+    response[1] = pickle.load( open('./plots/Country_Line.sav', 'rb') )
+    response[2] = pickle.load( open('./plots/Country_pie.sav', 'rb') )
+    response[3] = pickle.load( open('./plots/MP_Line.sav', 'rb') )
+    response[4] = pickle.load( open('./plots/MP_Pie.sav', 'rb') )
     return render_template("graph.html", response = response)
 
 if __name__ == '__main__':
