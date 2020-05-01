@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 from pygal.style import NeonStyle
 import pygal
 import pickle
@@ -72,11 +71,11 @@ for state in states:
     if state=='TT':
         graph.title='Country Corona Cases'
         response=graph.render_data_uri()
-        pickle.dump(response,open('Country_Corona_Cases.sav','wb'))
+        pickle.dump(response,open('./plots/Country_Line.sav','wb'))
     else:
         graph.title=state+' Corona Cases'
         response=graph.render_data_uri()
-        pickle.dump(response,open(state+'_Corona_Cases.sav','wb'))
+        pickle.dump(response,open('./plots/'+state+'_Line.sav','wb'))
         
         #pie graph of districts
         #data processing for pie chart creation
@@ -94,7 +93,7 @@ for state in states:
             mp_pie_chart.add(i,counts_number[i])
         #saving pie chart
         response=mp_pie_chart.render_data_uri()
-        pickle.dump(response,open(state+'_Districts_pie_chart.sav','wb'))
+        pickle.dump(response,open('./plots/'+state+'_Pie.sav','wb'))
         
         
         
@@ -107,7 +106,7 @@ pie_chart_country.title='Pie chart Of States Of India'
 for u,v in state_count.items():
     pie_chart_country.add(u,v)
 response=pie_chart_country.render_data_uri()
-pickle.dump(response,open('Pie_Chart_Of_States_Of_India.sav','wb'))
+pickle.dump(response,open('./plots/Country_pie.sav','wb'))
 
 
 
