@@ -2,7 +2,7 @@
 
 {% block worldmap %}
       <div class="worldmap container" >
-        <embed type="image/svg+xml" src= {{ response[0]|safe }} />
+        <embed type="image/svg+xml" src= {{ response["worldmap"]|safe }} />
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
 
@@ -12,11 +12,11 @@
 
     <div class="plots row">
       <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response[1]|safe }} />
+        <embed type="image/svg+xml" src= {{ response["country_line"]|safe }} />
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
       <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response[2]|safe }} />
+        <embed type="image/svg+xml" src= {{ response["country_pie"]|safe }} />
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
     </div>
@@ -28,11 +28,11 @@
 
     <div class="plots row">
       <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response[3]|safe }} />
+        <embed type="image/svg+xml" src= {{ response['MP_line']|safe }} />
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
       <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response[4]|safe }} />
+        <embed type="image/svg+xml" src= {{ response['MP_pie']|safe }} />
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
     </div>

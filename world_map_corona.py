@@ -21,20 +21,19 @@ page_json=json.loads(page_soup.text)
 test=pd.DataFrame(page_json['Countries'])
 test['CountryCode']=test['CountryCode'].str.lower()
 
-
 i=1
 data=test[['CountryCode','TotalConfirmed']]
 chart=pygal.maps.world.World(style=NeonStyle)
-while i<=100000:
+while i<=10000000:
     dreq=data[data['TotalConfirmed']>i]
     dreq=dreq[dreq['TotalConfirmed']<=10*i]
     names=dreq['CountryCode'].unique()
     creq=dict()
     for j in range(len(dreq)):
         creq[dreq.iloc[j,0]]=dreq.iloc[j,1]    
-    chart.add('greater than '+str(i)+' Lesser than '+str(10*i),creq)
+    chart.add('> '+str(i)+' and < '+str(10*i),creq)
     i*=10
 response=chart.render_data_uri()
 
-pickle.dump(response,open('./plots/worldmap.sav','wb'))
 
+pickle.dump(response,open('./plots/worldmap.sav','wb'))
