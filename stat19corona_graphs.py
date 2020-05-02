@@ -101,7 +101,7 @@ for state in states:
 data=c[index2]['State code']
 state_count=data.value_counts()
 
-pie_chart_country=pygal.Pie( inner_radius=0.6,style=NeonStyle,font_family='googlefont:Raleway')
+pie_chart_country=pygal.Pie( inner_radius=0.4,style=NeonStyle,font_family='googlefont:Raleway')
 pie_chart_country.title='Pie chart Of States Of India'
 for u,v in state_count.items():
     pie_chart_country.add(u,v)
