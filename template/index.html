@@ -47,7 +47,10 @@
 
     <!-- The World Map Goes Here! -->
 
-    {% block worldmap %} {% endblock %}
+    <div class="worldmap container" >
+      <embed type="image/svg+xml" src= {{ response["worldmap"]|safe }} />
+      <p style="margin-top: 10px; text-align: center;">State Plot</p>
+    </div>
 
 
   <!-- The Introduction -->
@@ -59,10 +62,63 @@
   </div>
 
   <!-- Indian Plot and Donut -->
-  
-  {% block countryplots %} {% endblock %}
 
-  {%block stateplots %} {% endblock %}
+  <div class="plots row">
+    <div class="col-lg-6">
+      <embed type="image/svg+xml" src= {{ response["country_line"]|safe }} />
+      <p style="margin-top: 10px; text-align: center;">State Plot</p>
+    </div>
+    <div class="col-lg-6">
+      <embed type="image/svg+xml" src= {{ response["country_pie"]|safe }} />
+      <p style="margin-top: 10px; text-align: center;">State Plot</p>
+    </div>
+  </div>
+
+  <!-- State dropdown -->
+  <form  action="{{ url_for('home') }}" method="POST">
+  <div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" >
+      Select Indian State
+    </a>
+        <select class="dropdown-menu dropdown-toggle" name="state_code" id="dropdownMenuLink" data-toggle="dropdown">
+          {% for st in statelists %}
+            <option class="dropdown-item" value={{ statelists[st] }} > {{ st }} </option>
+          {% endfor %}
+        </select>
+    </div>
+  </div>
+    <button class="btn btn-default" type="submit">Submit!</button>
+  </form>
+  <!-- <div class="container-fluid" id="feedback">
+    <form action="{{ url_for('home') }}" method="POST">
+        <div class="form-group">
+            <label class="sr-only" for="rating">Rating for Cafe</label>
+            <select name = 'rating' class="form-control" id="rating">
+              <option value="5" selected>5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="18">1</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" type="submit">Submit!</button>
+        </div>
+    </form>
+</div> -->
+
+  {% if response['state_line']: %}
+  <div class="plots row">
+    <div class="col-lg-6">
+      <embed type="image/svg+xml" src= {{ response["state_line"]|safe }} />
+      <p style="margin-top: 10px; text-align: center;">State Plot</p>
+    </div>
+    <div class="col-lg-6">
+      <embed type="image/svg+xml" src= {{ response["state_pie"]|safe }} />
+      <p style="margin-top: 10px; text-align: center;">State Plot</p>
+    </div>
+  </div>
+  {% endif %}
 
   </body>
 

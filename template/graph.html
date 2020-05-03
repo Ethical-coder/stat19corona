@@ -1,40 +1,18 @@
 {% extends "layout.html" %}
 
-{% block worldmap %}
-      <div class="worldmap container" >
-        <embed type="image/svg+xml" src= {{ response["worldmap"]|safe }} />
-        <p style="margin-top: 10px; text-align: center;">State Plot</p>
-      </div>
-
-{% endblock %}
-
-{% block countryplots %}
-
-    <div class="plots row">
-      <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response["country_line"]|safe }} />
-        <p style="margin-top: 10px; text-align: center;">State Plot</p>
-      </div>
-      <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response["country_pie"]|safe }} />
-        <p style="margin-top: 10px; text-align: center;">State Plot</p>
-      </div>
-    </div>
-
-{% endblock %}
-
-
 {% block stateplots %}
 
-    <div class="plots row">
-      <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response['MP_line']|safe }} />
-        <p style="margin-top: 10px; text-align: center;">State Plot</p>
-      </div>
-      <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response['MP_pie']|safe }} />
-        <p style="margin-top: 10px; text-align: center;">State Plot</p>
-      </div>
-    </div>
+  <div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Select Indian State
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <h6 class="dropdown-header">States and Union Territories</h6>
+  {% for st in statelists %}
+    <button type="button" class="dropdown-item" method='POST' >{{st}}</button>
+  {% endfor %}
+  </div>
+  </div>
 
 {% endblock %}
