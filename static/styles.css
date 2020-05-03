@@ -4,7 +4,7 @@ p{
 }
 
 body{
-  background-color: #111;
+  background-color: #000;
   color: #e3e3e3;
   font-family: 'Raleway';
 }
@@ -37,13 +37,9 @@ body{
   margin-bottom: 0;
 }
 
-.background{
-  fill : #111;
-}
-
 .worldmap{
-  padding: 5% 10%;
-  margin-top: 50px;
+  padding: 5% 20%;
+  margin-top: 100px;
 }
 
 /* **********************Content****************** */
