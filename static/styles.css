@@ -55,3 +55,7 @@ body{
   font-size: 1.75rem;
   color: #f95959;
 }
+
+.state-maps{
+  display: none;
+}

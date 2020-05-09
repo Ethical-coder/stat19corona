@@ -26,15 +26,30 @@
 
 {% block stateplots %}
 
-    <div class="plots row">
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    {% for state,stateCode in state_list.items(): %}
+      <button name="button" class="dropdown-item" id="{{ stateCode + 'dd' }}" >{{state}}</button>
+    {% endfor %}
+  </div>
+</div>
+{% for stateCode in state_list.values(): %}
+  {% if stateCode not in ["worldmap","country_line","country_pie" ]: %}
+    <div class="row state-maps" id="{{stateCode}}">
       <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response['MP_line']|safe }} />
+        <embed type="image/svg+xml" src= {{ response[stateCode+"_line"]|safe }} />
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
       <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response['MP_pie']|safe }} />
+        <embed type="image/svg+xml" src= {{ response[stateCode+"_pie"]|safe }} />
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
+
     </div>
+  {% endif %}
+{% endfor %}
 
 {% endblock %}
