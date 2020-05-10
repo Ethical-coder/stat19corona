@@ -34,15 +34,15 @@ for i in range(len(test1)):
     for j in range(len(test)):
         ans+=int(test.iloc[j,1])
         pie.add(test.iloc[j,4],test.iloc[j,1])
-    response=pie.render_data_uri()
-    pickle.dump(response,open('./plots/'+test1.iloc[i,2]+'_Pie.sav','wb'))
+    pie.render_to_file('./plots/'+test1.iloc[i,2]+'_Pie.svg')
+    
     pie1.add(test1.iloc[i,1],ans)
 
-response=pie1.render_data_uri()
-pickle.dump(response,open('./plots/Country_pie.sav','wb'))  
+pie1.render_to_file('./plots/Country_pie.svg')
 
 
 empty_states={'DD','DN','LD','NL','SK'}
+
 for state in empty_states:
 	pie1=pygal.Pie( inner_radius=0.4,style=NeonStyle,font_family='googlefont:Raleway')
-	pickle.dump(pie1.render_data_uri(),open('./plots/'+state+'_Pie.sav','wb'))
+	pie1.render_to_file('./plots/'+state+'_Pie.svg')

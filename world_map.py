@@ -33,6 +33,5 @@ while i<=1000000000:
         creq[dreq.iloc[j,0]]=dreq.iloc[j,1]    
     chart.add('> '+str(i)+' and < '+str(10*i),creq)
     i*=10
-response=chart.render_data_uri()
+chart.render_to_file('./plots/worldmap.svg')
 
-pickle.dump(response,open('./plots/worldmap.sav','wb'))

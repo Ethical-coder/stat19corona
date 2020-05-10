@@ -79,9 +79,7 @@ graph.add('Total Recovered Cases',recovered)
 graph.add('Daily Confirmed Cases',daily_confirmed)
 graph.add('Daily Decreased Cases',daily_decreased)
 graph.add('Daily Recovered Cases',daily_recovered)
-response=graph.render_data_uri()
-pickle.dump(response,open('./plots/Country_Line.sav','wb'))
-
+graph.render_to_file('./plots/Country_Line.svg')
 
 
 url='https://api.covid19india.org/states_daily.json'
@@ -151,8 +149,7 @@ for i in states:
         graph.add('daily recovered',daily_dec)
 
 
-        response=graph.render_data_uri()
-        pickle.dump(response,open('./plots/'+i.upper()+'_Line.sav','wb'))
+        graph.render_to_file('./plots/'+i.upper()+'_Line.svg')
 
 
 
