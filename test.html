@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<HTML>
+	<SCRIPT type="text/javascript" language="javascript">
+		function maps(id,mess){
+			var state=document.getElementById(id);
+			var message=document.getElementById(mess);
+
+			message.innerHTML=("Selected State is:"+state.value)
+		}
+	</SCRIPT>
+<HEAD>
+</HEAD>
+
+<BODY>
+	
+	<h1>select your state</h1>
+</hr>
+	<SELECT id="states" name="states" onchange="maps(this.id,'message')">
+		<option value=""></option>
+		<option value="MP">Madhya Pradesh</option>
+		<option value="UP">Uttar Pradesh</option>
+		<option value="RJ">Rajasthan</option>
+		<option value="TN">Tamil Nadu</option>
+		
+
+	</SELECT>
+	<br>
+	<label id="message"></label>
+
+	
+</object>
+	
+</BODY>
+
+</HTML>
+
