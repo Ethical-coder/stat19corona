@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<HTML>
+	<SCRIPT type="text/javascript" language="javascript">
+		function maps(id,mess){
+			var code=document.getElementById(id);
+			var state=document.getElementById(mess);
+			if(code.value!=""){
+			state.innerHTML=('<object data="'+code.value+'_Line.svg" type="image/svg+xml" height="500" width="50%"></object><br><object data="'+code.value+'_Pie.svg" type="image/svg+xml" height="500" width="50%"></object>');
+		}
+		}
+	</SCRIPT>
+<HEAD>
+</HEAD>
+
+<BODY>
+	<object data="worldmap.svg" type="image/svg+xml" height="500" width="100%">
+</object>
+<br>
+<object data="Country_Line.svg" type="image/svg+xml" height="500" width="50%">
+</object>
+<br>
+<object data="Country_pie.svg" type="image/svg+xml" height="500" width="50%">
+</object>
+<br>
+
+	<h1>select your state</h1>
+</hr>
+	<SELECT id="states" name="states" onchange="maps(this.id,'state_map')">
+		<option value=''></option>
+		<option value='AN'>Andaman & Nicobar Islands</option>
+		<option value='AP'>Andhra Pradesh</option>
+		<option value='AR'>Arunachal Pradesh</option>
+		<option value='AS'>Assam</option>
+		<option value='BR'>Bihar</option>
+		<option value='CH'>Chandigarh</option>
+		<option value='CT'>Chhattisgarh</option>
+		<option value='DD'>Daman & Diu</option>
+		<option value='DL'>Delhi</option>
+		<option value='DN'>Dadar & Nagar Haveli</option>
+		<option value='GA'>Goa</option>
+		<option value='GJ'>Gujrat</option>
+		<option value='HP'>Himachal Pradesh</option>
+		<option value='HR'>Haryana</option>
+		<option value='JH'>Jharkhand</option>
+		<option value='JK'>Jammu & Kashmir</option>
+		<option value='KA'>Karnatak</option>
+		<option value='KL'>Kerela</option>
+		<option value='LA'>Lakshwadeep</option>
+		<option value='LD'>Laddakh</option>
+		<option value='MH'>Maharashtra</option>
+		<option value='ML'>Meghalaya</option>
+		<option value='MN'>Manipur</option>
+		<option value='MP'>Madhya Pradesh</option>
+		<option value='MZ'>Mizoram</option>
+		<option value='NL'>Nagaland</option>
+		<option value='OR'>Odisha</option>
+		<option value='PB'>Punjab</option>
+		<option value='PY'>Pondicherry</option>
+		<option value='RJ'>Rajasthan</option>
+		<option value='SK'>Sikkim</option>
+		<option value='TG'>Telangana</option>
+		<option value='TN'>Tamil Nadu</option>
+		<option value='TR'>Tripura</option>
+		<option value='UP'>Uttar Pradesh</option>
+		<option value='UT'>Uttarakhand</option>
+		<option value='WB'>West Bengal</option>
+
+	</SELECT>
+	<br>
+	<label id="state_map"></label>
+
+
+	
+</BODY>
+
+</HTML>
