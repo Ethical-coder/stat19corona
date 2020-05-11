@@ -5,7 +5,7 @@
 			var code=document.getElementById(id);
 			var state=document.getElementById(mess);
 			if(code.value!=""){
-			state.innerHTML=('<object data="'+code.value+'_Line.svg" type="image/svg+xml" height="500" width="50%"></object><br><object data="'+code.value+'_Pie.svg" type="image/svg+xml" height="500" width="50%"></object>');
+			state.innerHTML=('<object data="'+code.value+'_Line.svg" type="image/svg+xml" height="500" width="50%"></object><object data="'+code.value+'_Pie.svg" type="image/svg+xml" height="500" width="50%"></object><br>');
 		}
 		}
 	</SCRIPT>
@@ -16,14 +16,13 @@
 	<object data="worldmap.svg" type="image/svg+xml" height="500" width="100%">
 </object>
 <br>
+<center><h1>Country Graphs</h1></center>
 <object data="Country_Line.svg" type="image/svg+xml" height="500" width="50%">
-</object>
-<br>
-<object data="Country_pie.svg" type="image/svg+xml" height="500" width="50%">
+</object><object data="Country_pie.svg" type="image/svg+xml" height="500" width="50%">
 </object>
 <br>
 
-	<h1>select your state</h1>
+	<center><h1>select your state</h1>
 </hr>
 	<SELECT id="states" name="states" onchange="maps(this.id,'state_map')">
 		<option value=''></option>
@@ -66,6 +65,7 @@
 		<option value='WB'>West Bengal</option>
 
 	</SELECT>
+	</center>
 	<br>
 	<label id="state_map"></label>
 
