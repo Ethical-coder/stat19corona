@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<!-- Color Palette used https://colorhunt.co/palette/66816 -->
+
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="static/styles.css">
+
+	<!-- google fonts used : Raleway and Oswald(headings) -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald|Raleway&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Risque&display=swap" rel="stylesheet">
+
+	<title>Cororna Stats</title>
+</head>
+
+<BODY>
+	<!-- navigation Bar -->
+	<nav class="navbar navbar-expand-lg fixed-top ">
+
+		<p class="navbar-brand">stat19COVID</p>
+
+		<button class="navbar-toggler btn-outline-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item link">
+					<a class="nav-link" href="#">World <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item link">
+					<a class="nav-link" href="#">India</a>
+				</li>
+				<li class="nav-item link">
+					<a class="nav-link" href="#">Indian States</a>
+				</li>
+				<li class="nav-item link">
+					<a class="nav-link" href="#">About</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- World Map plot. -->
+	<div class="worldmap container" >
+		<object type="image/svg+xml" data="plots/worldmap.svg" height="500" width="100%"></object>
+		<p style="margin-top: 10px; text-align: center;">World Map</p>
+	</div>
+
+
+	<!-- The Introduction -->
+  <div class=" intro container-fluid">
+    <h3>
+      The Corona Statistics Website
+    </h3>
+    <p style="display: inline-block;" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Arcu bibendum at varius vel. Aliquet bibendum enim facilisis gravida neque convallis a cras. Pharetra convallis posuere morbi leo urna. Lacinia quis vel eros donec ac odio tempor. Euismod lacinia at quis risus sed. Ut diam quam nulla porttitor massa id neque aliquam vestibulum. Elit pellentesque habitant morbi tristique senectus et netus. Diam vulputate ut pharetra sit amet aliquam id diam. Tellus rutrum tellus pellentesque eu tincidunt tortor. Et leo duis ut diam quam nulla. Tincidunt eget nullam non nisi est sit amet facilisis. Enim sit amet venenatis urna. Convallis a cras semper auctor neque vitae tempus quam pellentesque. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Vitae semper quis lectus nulla at volutpat. Sed arcu non odio euismod. Turpis massa tincidunt dui ut ornare lectus sit amet est. Nibh nisl condimentum id venenatis a condimentum.</p>
+  </div>
+
+	<!-- Country Plots -->
+	<object data="plots/Country_Line.svg" type="image/svg+xml" height="500" width="50%">
+	</object><object data="plots/Country_pie.svg" type="image/svg+xml" height="500" width="50%">
+	</object>
+	<br>
+
+	<center>
+		<h2>Select Indian State</h2>
+		</hr>
+		<SELECT id="states" name="states" onchange="maps(this.id,'state_map')">
+			<option value=''></option>
+			<option value='AN'>Andaman & Nicobar Islands</option>
+			<option value='AP'>Andhra Pradesh</option>
+			<option value='AR'>Arunachal Pradesh</option>
+			<option value='AS'>Assam</option>
+			<option value='BR'>Bihar</option>
+			<option value='CH'>Chandigarh</option>
+			<option value='CT'>Chhattisgarh</option>
+			<option value='DD'>Daman & Diu</option>
+			<option value='DL'>Delhi</option>
+			<option value='DN'>Dadar & Nagar Haveli</option>
+			<option value='GA'>Goa</option>
+			<option value='GJ'>Gujrat</option>
+			<option value='HP'>Himachal Pradesh</option>
+			<option value='HR'>Haryana</option>
+			<option value='JH'>Jharkhand</option>
+			<option value='JK'>Jammu & Kashmir</option>
+			<option value='KA'>Karnatak</option>
+			<option value='KL'>Kerela</option>
+			<option value='LA'>Lakshwadeep</option>
+			<option value='LD'>Laddakh</option>
+			<option value='MH'>Maharashtra</option>
+			<option value='ML'>Meghalaya</option>
+			<option value='MN'>Manipur</option>
+			<option value='MP'>Madhya Pradesh</option>
+			<option value='MZ'>Mizoram</option>
+			<option value='NL'>Nagaland</option>
+			<option value='OR'>Odisha</option>
+			<option value='PB'>Punjab</option>
+			<option value='PY'>Pondicherry</option>
+			<option value='RJ'>Rajasthan</option>
+			<option value='SK'>Sikkim</option>
+			<option value='TG'>Telangana</option>
+			<option value='TN'>Tamil Nadu</option>
+			<option value='TR'>Tripura</option>
+			<option value='UP'>Uttar Pradesh</option>
+			<option value='UT'>Uttarakhand</option>
+			<option value='WB'>West Bengal</option>
+
+		</SELECT>
+	</center>
+	<br>
+	<label class = 'row' id="state_map"></label>
+
+
+
+</BODY>
+<!-- ICON Script -->
+<script src="https://kit.fontawesome.com/c8974f4dcd.js" crossorigin="anonymous"></script>
+
+<!-- JS for Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!-- Stateplots Scripts -->
+<SCRIPT type="text/javascript" language="javascript">
+	function maps(id, mess) {
+		var code = document.getElementById(id);
+		var state = document.getElementById(mess);
+		if (code.value != "") {
+			var photos = `<div class="col-lg-6">
+			`;
+			photos += '<object data="plots/' + code.value + '_Line.svg" type="image/svg+xml" ></object>';
+			photos += `<p style="margin-top: 10px; text-align: center;">State Plot</p>
+			</div>
+			<div class="col-lg-6">
+				`;
+			photos += '<object data="plots/' + code.value + '_Pie.svg" type="image/svg+xml" ></object><br>';
+			photos += `  <p style="margin-top: 10px; text-align: center;">State Plot</p>
+    	</div>`;
+			state.innerHTML = (photos);
+		}
+	}
+</SCRIPT>
+
+</HTML>
