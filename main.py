@@ -1,4 +1,4 @@
-import pygal 
+import pygal
 import pickle
 
 from flask import Flask, render_template
@@ -8,14 +8,14 @@ app = Flask(__name__, template_folder = 'template')
 
 @app.route('/')
 def home():
-    response = dict()
-    response['worldmap'] = pickle.load( open('./plots/worldmap.sav', 'rb') )
-    response['country_line'] = pickle.load( open('./plots/Country_Line.sav', 'rb') )
-    response['country_pie'] = pickle.load( open('./plots/Country_pie.sav', 'rb') )
-    for i in states:
-    	response[i+'_line'] = pickle.load( open('./plots/'+i+'_Line.sav', 'rb') )
-    	response[i+'_pie'] = pickle.load( open('./plots/'+i+'_Pie.sav', 'rb') )
-    return render_template("graph.html", response = response, state_list=state_list)
+    # response = dict()
+    # response['worldmap'] = pickle.load( open('./plots/worldmap.sav', 'rb') )
+    # response['country_line'] = pickle.load( open('./plots/Country_Line.sav', 'rb') )
+    # response['country_pie'] = pickle.load( open('./plots/Country_pie.sav', 'rb') )
+    # for i in states:
+    # 	response[i+'_line'] = pickle.load( open('./plots/'+i+'_Line.sav', 'rb') )
+    # 	response[i+'_pie'] = pickle.load( open('./plots/'+i+'_Pie.sav', 'rb') )
+    return render_template("graph.html", state_list=state_list)
 
 if __name__ == '__main__':
     app.run(debug=True)

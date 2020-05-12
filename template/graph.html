@@ -2,7 +2,9 @@
 
 {% block worldmap %}
       <div class="worldmap container" >
-        <embed type="image/svg+xml" src= {{ response["worldmap"]|safe }} />
+        <object type="image/svg+xml" data="plots/worldmap.svg" height="500" width="50%">
+
+        </object>
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
 
@@ -12,11 +14,17 @@
 
     <div class="plots row">
       <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response["country_line"]|safe }} />
+
+        <object type="image/svg+xml" data="plots/Country_Line.svg" height="500" width="50%">
+
+        </object>
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
       <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response["country_pie"]|safe }} />
+
+        <object type="image/svg+xml" data="plots/Country_pie.svg">
+
+        </object>
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
     </div>
@@ -25,26 +33,34 @@
 
 
 {% block stateplots %}
-
+<!--
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Dropdown button
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    {% for state,stateCode in state_list.items(): %}
-      <button name="button" class="dropdown-item" id="{{ stateCode + 'dd' }}" >{{state}}</button>
-    {% endfor %}
+
   </div>
-</div>
+</div> -->
+
+<SELECT id="states" name="states" onchange="maps(this.id)">
+  {% for stateCode,stateName in state_list.items(): %}
+    <option value="{{ stateCode + 'dd' }}">{{stateName}}</option>
+  {% endfor%}
+</SELECT>
 {% for stateCode in state_list.values(): %}
   {% if stateCode not in ["worldmap","country_line","country_pie" ]: %}
-    <div class="row state-maps" id="{{stateCode}}">
+    <div class="row state-maps mapsss" id="{{stateCode}}">
       <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response[stateCode+"_line"]|safe }} />
+
+        <object type="image/svg+xml" data="{{ 'plots/' +  stateCode  + '_Line.svg'}}" height="500" width="50%">
+        </object>
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
       <div class="col-lg-6">
-        <embed type="image/svg+xml" src= {{ response[stateCode+"_pie"]|safe }} />
+
+        <object type="image/svg+xml" data="{{ 'plots/' +  stateCode  + '_Pie.svg'}}" height="500" width="50%">
+        </object>
         <p style="margin-top: 10px; text-align: center;">State Plot</p>
       </div>
 
