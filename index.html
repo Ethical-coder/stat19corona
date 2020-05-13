@@ -29,43 +29,50 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item link">
-					<a class="nav-link" href="#">World <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="#world_map_id">World <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item link">
-					<a class="nav-link" href="#">India</a>
+					<a class="nav-link" href="#country_plots_id">India</a>
 				</li>
 				<li class="nav-item link">
-					<a class="nav-link" href="#">Indian States</a>
+					<a class="nav-link" href="#state_plots_id">Indian States</a>
 				</li>
 				<li class="nav-item link">
-					<a class="nav-link" href="#">About</a>
+					<a class="nav-link" href="#about_id">About</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
 	<!-- World Map plot. -->
-	<div class="worldmap container" >
+	<div class="worldmap container" id="world_map_id" >
 		<object type="image/svg+xml" data="plots/worldmap.svg" height="500" width="100%"></object>
 		<p style="margin-top: 10px; text-align: center;">World Map</p>
 	</div>
 
 
 	<!-- The Introduction -->
-  <div class=" intro container-fluid">
+  <div class=" intro container-fluid" id="about_id">
     <h3>
       The Corona Statistics Website
     </h3>
-    <p style="display: inline-block;" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Arcu bibendum at varius vel. Aliquet bibendum enim facilisis gravida neque convallis a cras. Pharetra convallis posuere morbi leo urna. Lacinia quis vel eros donec ac odio tempor. Euismod lacinia at quis risus sed. Ut diam quam nulla porttitor massa id neque aliquam vestibulum. Elit pellentesque habitant morbi tristique senectus et netus. Diam vulputate ut pharetra sit amet aliquam id diam. Tellus rutrum tellus pellentesque eu tincidunt tortor. Et leo duis ut diam quam nulla. Tincidunt eget nullam non nisi est sit amet facilisis. Enim sit amet venenatis urna. Convallis a cras semper auctor neque vitae tempus quam pellentesque. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Vitae semper quis lectus nulla at volutpat. Sed arcu non odio euismod. Turpis massa tincidunt dui ut ornare lectus sit amet est. Nibh nisl condimentum id venenatis a condimentum.</p>
+    <p style="display: inline-block;" >
+    	Stat19COVID is a statistics visualization website for the numbers and figures of COVID-19 pandemic in Indian states and Districts. World map shown above gives an overview of all the countries across the glove that are affected by the deadly disease.
+			This is a fun activity by college undergrads and by no means intends to reap any commercial benefits. To support Indian Govt. and Indian people in their fight against COVID-19, visit <a href="https://pmnrf.gov.in/en/online-donation">here</a>
+			 to donate in the PM relif fund and be a proud citizen of the country.
+    </p>
   </div>
 
 	<!-- Country Plots -->
-	<object data="plots/Country_Line.svg" type="image/svg+xml" height="500" width="50%">
-	</object><object data="plots/Country_pie.svg" type="image/svg+xml" height="500" width="50%">
-	</object>
+	<div class="row" id="country_plots_id">
+		<object data="plots/Country_Line.svg" type="image/svg+xml" class='col-lg-6'></object>
+		<object data="plots/Country_pie.svg" type="image/svg+xml" class='col-lg-6'></object>
+	</div>
+
 	<br>
 
-	<center>
+	<!-- State plots -->
+	<center id="state_plots_id" style="margin-top = 50px;">
 		<h2>Select Indian State</h2>
 		</hr>
 		<SELECT id="states" name="states" onchange="maps(this.id,'state_map')">
@@ -113,7 +120,26 @@
 	<br>
 	<label class = 'row' id="state_map"></label>
 
+	<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+  <div class="container-fluid text-center text-md-left">
+    <div class="row">
+      <div class="col-md-6 mt-md-0 mt-3">
+        <h5 class="text-uppercase">stat19COVID</h5>
+        <p>Find the source on <a href="https://github.com/Ethical-coder/stat19corona">GitHub</a>.</p>
+      </div>
 
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+	<!-- copyright -->
+  <div class="cpr footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://github.com/Ethical-coder">Ethical-coder</a> and <a href="https://github.com/coder-iota">coder-iota</a>
+  </div>
+</footer>
 
 </BODY>
 <!-- ICON Script -->
@@ -138,7 +164,7 @@
 			<div class="col-lg-6">
 				`;
 			photos += '<object data="plots/' + code.value + '_Pie.svg" type="image/svg+xml" ></object><br>';
-			photos += `  <p style="margin-top: 10px; text-align: center;">State Plot</p>
+			photos += `  <p style="margin-top: 10px; text-align: center;">State Pie</p>
     	</div>`;
 			state.innerHTML = (photos);
 		}
