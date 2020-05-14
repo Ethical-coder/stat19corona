@@ -9,6 +9,14 @@ body{
   font-family: 'Raleway';
 }
 
+a{
+  color: #e3e3e3;
+}
+
+a:hover{
+  color: #f95959;
+  text-decoration: none;
+}
 /* *******************NAVIGATOION BAR****************** */
 .navbar{
   background-color: #374955;
@@ -48,6 +56,7 @@ body{
   padding-left: 5%;
   padding-right: 5%;
   letter-spacing: 1.5;
+  margin: 50px 0;
 }
 .intro h3{
   text-align: center;
@@ -59,3 +68,11 @@ body{
 .state-maps{
   display: none;
 }
+/* *********************Footer*********************** */
+footer{
+  background-color: #374955;
+}
+ .cpr{
+   color: #3749A5;
+   font-size: 20;
+ }
