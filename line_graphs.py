@@ -94,7 +94,7 @@ data=pd.DataFrame(page_json['states_daily'])
 states=data.columns
 
 for i in states:
-    if i!='date' and i!='status' and i!='tt':
+    if i.upper() in code_to_name.keys() :
         data_con=data[data['status']=='Confirmed']
         data_con=data_con[i]
         data_dec=data[data['status']=='Deceased']
